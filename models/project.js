@@ -15,11 +15,6 @@ const projectSchema = new mongoose.Schema({
 		required: false,
 		default: '#808080'
 	},
-	children: {
-		type: mongoose.Schema.Types.Mixed,
-		required: false,
-		default: []
-	}
 })
 
 module.exports = mongoose.model('Project', projectSchema)

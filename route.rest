@@ -2,26 +2,41 @@ GET http://localhost:3000/projects
 
 ###
 
-POST http://localhost:3000/projects
+GET http://localhost:3000/tasks
+
+###
+
+POST http://localhost:3000/tasks
 Content-Type: application/json
 
 {
-	"name": "Project B!"
+	"task": "This is a task (1)",
+	"endDate": "{{$datetime '2021-08-01'}}",
+	"parentId": "608b536e824e965fb7ae37b5"
 }
 
 ###
 
-GET http://localhost:3000/projects/608b4be8fc825e5a9c3f3052
-
-###
-
-DELETE http://localhost:3000/projects/608b4be8fc825e5a9c3f3052
-
-###
-
-PATCH http://localhost:3000/projects/608b4be8fc825e5a9c3f3052
+POST http://localhost:3000/tasks
 Content-Type: application/json
 
 {
-	"name": "Project C!"
+	"task": "This is a task (2)",
+	"endDate": "{{$datetime '2021-08-01'}}",
+	"parentId": "608b49e6c4c272590dcf3558"
 }
+
+###
+
+POST http://localhost:3000/tasks
+Content-Type: application/json
+
+{
+	"task": "This is a task (3)",
+	"endDate": "{{$datetime '2021-08-01'}}",
+	"parentId": "608b536e824e965fb7ae37b5"
+}
+
+###
+
+GET http://localhost:3000/tasks/byParent/608b49e6c4c272590dcf3558
